@@ -4,7 +4,7 @@
 
 ---
 
-## ✨ Highlights
+## Highlights
 
 - **Modular Tool Picker**  
   Select from five integrated components:  
@@ -28,7 +28,7 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1 . Clone
 
@@ -51,7 +51,7 @@ pip3 install pyqt5 rsa rsactftool
 python cipherflux.py
 ```
 
-## ⚙️ Configuration Tips
+## Configuration
 
 **Module options:**  
 Each built‑in utility ships with tunable parameters—such as hash thresholds, iteration rounds, or RSA key sizes—that let you balance speed against analytical depth. For quick reconnaissance, lower the thresholds or rounds to finish faster; for exhaustive audits, raise them to ensure every corner case is examined.
@@ -59,7 +59,7 @@ Each built‑in utility ships with tunable parameters—such as hash thresholds,
 **File selection:**  
 Make sure the input you feed a module matches the format it expects. For instance, the SHA‑1 Collision Finder is designed to parse `.pdf` files, whereas Break‑OTS works best with plain‑text `.txt` data. Providing the right file type prevents parsing errors and guarantees accurate results.
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome pull requests and feature suggestions!
 
@@ -89,12 +89,12 @@ git push origin feature/FeatureName
 ### Create a Pull Request
 Once pushed, open a pull request (PR) on GitHub to merge your changes into the main repository.
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 CipherFlux stands on the shoulders of countless open‑source projects.
 Thank you to every contributor whose work makes this suite possible.
 
-## 👥 Authors
+## Authors
 
 - Samarth Bhat (Samarth@reinfosec.com)
 - Sohan Simhar Prabakar ([@Sohan245](https://github.com/Sohan245/))
