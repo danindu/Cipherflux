@@ -24,7 +24,7 @@ class WorkerThread(QThread):
         ansi_escape = re.compile(r'\x1B\[[0-?9;]*[mG]')  # Regex pattern for ANSI codes
         return ansi_escape.sub('', text)
 
-class Realtic(QWidget):
+class Cipherflux(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
@@ -94,7 +94,7 @@ class Realtic(QWidget):
         layout.addWidget(self.outputBox)
 
         self.setLayout(layout)
-        self.setWindowTitle('Realtic')
+        self.setWindowTitle('Cipherflux')
         self.setGeometry(500, 100, 1000, 850)
         self.show()
 
@@ -189,12 +189,12 @@ class Realtic(QWidget):
     def runTool(self):
         if self.toolSelector.currentText() == 'Linear Trails' and self.filePath:
             commands = [
-                ['timeout', '30', '/root/Documents/ReInfoSec/Realtic/Linear_Trails/lin', '-I', '10', '-S', '2', '-i', self.filePath],
+                ['timeout', '30', '/root/Documents/ReInfoSec/Cipherflux/Linear_Trails/lin', '-I', '10', '-S', '2', '-i', self.filePath],
             ]
             self.runCommandsInThreads(commands)
 
         elif self.toolSelector.currentText() == 'SHA1 Collision Detection' and self.pdfFiles:
-            command = ['/root/Documents/ReInfoSec/Realtic/SHA1_Collision_Detection/bin/sha1dcsum'] + self.pdfFiles
+            command = ['/root/Documents/ReInfoSec/Cipherflux/SHA1_Collision_Detection/bin/sha1dcsum'] + self.pdfFiles
             self.runCommandsInThreads([command])
 
         elif self.toolSelector.currentText() == 'Break OTS' and self.filePath:
@@ -207,21 +207,21 @@ class Realtic(QWidget):
             threshold_value = self.threshold_input.text()
             maxBFround_value = self.maxBFround_input.text()
 
-            command = ['/root/Documents/ReInfoSec/Realtic/Persichetti_OTS_CryptAnalysis/breakOTS', p_value, w1_value, w2_value, delta_value, relax_value, self.filePath, threshold_value, maxBFround_value]
+            command = ['/root/Documents/ReInfoSec/Cipherflux/Persichetti_OTS_CryptAnalysis/breakOTS', p_value, w1_value, w2_value, delta_value, relax_value, self.filePath, threshold_value, maxBFround_value]
             self.runCommandsInThreads([command])
         
         elif self.toolSelector.currentText() == 'RSA CTF Tool':
             self.runRsaCtfToolInNewTerminal()
         
         elif self.toolSelector.currentText() == 'S-Box Gates' and self.filePath:
-            command = ['/root/Documents/ReInfoSec/Realtic/S-Box_Gates/build/sboxgates', self.filePath]
+            command = ['/root/Documents/ReInfoSec/Cipherflux/S-Box_Gates/build/sboxgates', self.filePath]
             self.runCommandsInThreads([command])
         
     
     def runRsaCtfToolInNewTerminal(self):
         # Define the command to open a new terminal and execute RsaCtfTool
         self.process = QProcess(self)
-        self.process.start("x-terminal-emulator", ["-e", "bash", "-c", f"python3 /root/Documents/ReInfoSec/Realtic/RSA_CTF_Tool/RsaCtfTool.py --publickey {self.filePath} --private; exec bash"])
+        self.process.start("x-terminal-emulator", ["-e", "bash", "-c", f"python3 /root/Documents/ReInfoSec/Cipherflux/RSA_CTF_Tool/RsaCtfTool.py --publickey {self.filePath} --private; exec bash"])
 
     def runCommandsInThreads(self, commands):
         for command in commands:
@@ -244,5 +244,5 @@ class Realtic(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = Realtic()
+    ex = Cipherflux()
     sys.exit(app.exec_())
