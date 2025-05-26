@@ -42,6 +42,7 @@ cd cipherflux
 ```bash
 sudo apt update
 sudo apt install python3 python3-pip python3-pyqt5 -y
+sudo apt-get install cmake graphviz libmpich-dev libxml2-dev mpich
 pip3 install pyqt5 rsa rsactftool
 ```
 
