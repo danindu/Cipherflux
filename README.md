@@ -4,7 +4,7 @@
 
 ---
 
-## Highlights
+## Features
 
 - **Modular Tool Picker**  
   Select from five integrated components:  
